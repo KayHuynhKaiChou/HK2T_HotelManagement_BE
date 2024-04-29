@@ -4,7 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  name       :string(255)      not null
-#  status     :bigint           default(1), not null
+#  status     :bigint           default("INACTIVE"), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

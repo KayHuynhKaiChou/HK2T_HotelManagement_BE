@@ -92,18 +92,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_19_145219) do
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "firstname", null: false
     t.string "surname", null: false
-    t.string "city", null: false
-    t.string "district", null: false
-    t.string "ward", null: false
-    t.string "address", null: false
-    t.bigint "id_card", null: false
-    t.string "phone", null: false
+    t.string "city"
+    t.string "district"
+    t.string "ward"
+    t.string "address"
+    t.bigint "id_card"
     t.string "email", null: false
-    t.datetime "birth_day", null: false
-    t.string "gender", null: false
+    t.string "password_digest", null: false
+    t.datetime "birth_day"
+    t.bigint "gender"
     t.bigint "position", null: false
     t.bigint "salary"
-    t.string "link_avatar", null: false
+    t.string "link_avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

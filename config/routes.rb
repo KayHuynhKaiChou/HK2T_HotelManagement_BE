@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
-    namespace :admin do
-      resources :user , :crew
-      get 'clothes/preview', to: 'clothes#preview'
+    namespace :user do
+      get 'sign_in', to: 'user#sign_in'
+      post 'sign_up', to: 'user#sign_up'
+      put 'change_password', to: 'user#change_password'
     end
   end
 end
