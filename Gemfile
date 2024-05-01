@@ -19,6 +19,8 @@ gem 'jwt'
 
 gem 'bcrypt'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
