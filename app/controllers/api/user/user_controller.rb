@@ -13,14 +13,14 @@ class Api::User::UserController < ApplicationController
         h_user.except!(:created_at)
         h_user.except!(:updated_at)
         h_user.merge!(access_token: token)
-        render json: respones_success("Đăng nhập thành công" , h_user) ,
+        render json: respones_success("Sign in successfully !" , h_user) ,
         status: :ok
       else
-        render json: respones_bad_request("Password không trùng khớp"),
+        render json: respones_bad_request("Password is wrong !"),
         status: :unprocessable_entity
       end
     else
-      render json: respones_bad_request("Email không trùng khớp"),
+      render json: respones_bad_request("Email is wrong !"),
       status: :unprocessable_entity
     end
   end
@@ -29,18 +29,18 @@ class Api::User::UserController < ApplicationController
   def sign_up
     userQueryFilter = user_query_filter(signup_form)
     if userQueryFilter.present?
-      render json: respones_bad_request("Email đã tồn tại"),
+      render json: respones_bad_request("Email already exists !"),
       status: :unprocessable_entity
     else
       userQueryCreate = User.create(signup_form)
-      render json: respones_success("Đăng ký thành công" , userQueryCreate) ,
+      render json: respones_success("Sign up successfully !" , userQueryCreate) ,
       status: :ok
     end
   end
 
   def change_password
     updated_user = current_user.update(change_password_form)
-    render json: respones_success("Thay đổi mật khẩu thành công" , updated_user) ,
+    render json: respones_success("Change password successfully !" , updated_user) ,
     status: :ok
   end
 
